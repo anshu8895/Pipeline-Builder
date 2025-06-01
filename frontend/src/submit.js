@@ -31,7 +31,12 @@ export const SubmitButton = () => {
             console.log('Submitting pipeline with:', { nodes, edges });
 
             // Send data to the backend
-            const response = await fetch('http://localhost:8000/pipelines/parse', {
+            // Use environment-appropriate API URL
+            const apiUrl = process.env.NODE_ENV === 'production' 
+                ? '/api/pipelines/parse' 
+                : 'http://localhost:8000/pipelines/parse';
+                
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,9 +62,13 @@ export const SubmitButton = () => {
         } catch (error) {
             console.error('Error submitting pipeline:', error);
 
-            // Show error alert
+            // Show error alert with environment-appropriate message
+            const errorMessage = process.env.NODE_ENV === 'production' 
+                ? `Error: ${error.message}. Please try again or contact support if the issue persists.`
+                : `Error: ${error.message}. Make sure the FastAPI backend is running at http://localhost:8000.`;
+                
             setAlertInfo({
-                message: `Error: ${error.message}. Make sure the FastAPI backend is running at http://localhost:8000.`,
+                message: errorMessage,
                 type: 'error'
             });
         } finally {

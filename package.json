@@ -1,0 +1,26 @@
+{
+  "name": "pipeline-builder",
+  "version": "1.0.0",
+  "description": "A React/React Flow pipeline builder application with FastAPI backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm start",
+    "backend": "cd backend && uvicorn main:app --reload"
+  },
+  "keywords": [
+    "react",
+    "react-flow",
+    "pipeline",
+    "dag",
+    "fastapi",
+    "python"
+  ],
+  "author": "Anshuman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshu8895/Pipeline-Builder"
+  }
+}
