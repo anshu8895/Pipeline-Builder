@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { PipelineToolbar } from './toolbar';
 import { PipelineUI } from './ui';
 import { SubmitButton } from './submit';
@@ -9,9 +9,9 @@ function App() {
     // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) return savedTheme;
-    
-    return window.matchMedia('(prefers-color-scheme: dark)').matches 
-      ? 'dark' 
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
       : 'light';
   });
 
@@ -22,7 +22,7 @@ function App() {
     } else {
       document.documentElement.classList.remove('dark-mode');
     }
-    
+
     // Save theme preference
     localStorage.setItem('theme', theme);
   }, [theme]);
@@ -37,12 +37,12 @@ function App() {
         <h1 className="app-title">Pipeline Builder</h1>
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
       </header>
-      
+
       <main className="app-main">
         <PipelineToolbar />
         <PipelineUI />
       </main>
-      
+
       <SubmitButton />
     </div>
   );

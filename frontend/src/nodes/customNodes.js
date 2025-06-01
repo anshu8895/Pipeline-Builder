@@ -1,7 +1,7 @@
 // customNodes.js
 // Collection of sample nodes using the BaseNode abstraction
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BaseNode } from './BaseNode';
 
 // Math Operation Node

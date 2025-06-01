@@ -54,7 +54,8 @@ export const BaseNode = ({
       className={`node-container node-${nodeType} ${className}`}
       style={style}
     >
-      {/* Input Handles - positioned on left side */}      {inputs.map((input, index) => (
+      {/* Input Handles - positioned on left side */}      
+      {inputs.map((input, index) => (
         <Handle
           key={input.id}
           type="target"
@@ -68,11 +69,13 @@ export const BaseNode = ({
             ...(input.style || {})
           }}
         />
-      ))}      {/* Node Header */}
+      ))}      
+      {/* Node Header */}
       <div className="node-header"
            onMouseEnter={() => setShowDeleteButton(true)}
            onMouseLeave={() => setShowDeleteButton(false)}>
-        <div>{title}</div>        {showDeleteButton && (
+        <div>{title}</div>        
+        {showDeleteButton && (
           <div 
             className="delete-button" 
             onClick={handleDelete}

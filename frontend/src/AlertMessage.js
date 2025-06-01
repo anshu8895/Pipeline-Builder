@@ -1,7 +1,7 @@
 // AlertMessage.js
 // Component for displaying alert/notification messages to users
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export const AlertMessage = ({ message, type = 'info', autoClose = true, duration = 5000 }) => {
   const [visible, setVisible] = useState(true);

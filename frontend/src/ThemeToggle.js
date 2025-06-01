@@ -1,8 +1,6 @@
 // ThemeToggle.js
 // Toggle component for switching between light and dark modes
 
-import React from 'react';
-
 export const ThemeToggle = ({ theme, toggleTheme }) => {
   return (
     <button 
